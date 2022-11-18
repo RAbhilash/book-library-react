@@ -5,6 +5,7 @@ function landing() {
     <div id="landing">
         <h2>LECTORI SALUTEM <div id="fadeInOverlay"></div></h2> 
         <button>MY BOOKS</button>
+        
     </div>
   )
 }
