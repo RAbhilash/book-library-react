@@ -3,16 +3,46 @@ body{
     background-image: url('library.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100%;
-    width: 100%; */
 }
 h2{
+    position: relative;
     color: white;
-    /* text-align: center; */
     letter-spacing: 3px;
     font-size: 45px;
     font-family: 'Sono', sans-serif;
+}
+#fadeInOverlay{
+    position: absolute;
+    top: 0;
+    /* content: ""; */
+    height: 100%;
+    background-color: white;
+    animation: animate 5s ease-in;
+
+}
+
+/* .greet{
+    display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.greet .top{
+    animation: showup 7s infinite;
+}
+.greet .bottom{
+    width:0px;
+  animation: reveal 7s infinite;
+}
+.greet .bottom span{
+    margin-left:-355px;
+  animation: slidein 7s infinite;
+} */
+@keyframes animate {
+    0% {width: 100%;}
+    40% {width: 0;}
+    60% {width: 0;}
 }
