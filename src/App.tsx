@@ -1,9 +1,11 @@
-import "./App.css";
+import "./App.scss";
 import Landing from "./components/landing/landing";
+import { useState } from "react";
 function App() {
+  const [isFirstVisit,setVisited]=useState(true)
   return (
     <div className="App">
-      <Landing />
+      <Landing isFirstVisit/>
     </div>
   );
 }

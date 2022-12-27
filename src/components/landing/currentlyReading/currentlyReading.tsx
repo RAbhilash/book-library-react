@@ -1,3 +1,4 @@
+import "./currentlyReading.scss";
 function currentlyReading() {
   return (
     <div>jump back</div>
