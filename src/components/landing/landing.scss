@@ -8,18 +8,16 @@ body {
   margin: 0;
   // background-image: url('library.jpg');
   background-color: lightgoldenrodyellow;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  height: $vheight;
+}
+#intro-wrap{
+  position: relative;
+  width: 100%;
+  height: $vheight;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: $vheight;
 }
-/* #intro{
-    border: solid;
-    border-color: white;
-} */
 @keyframes animation {
   0% {
     opacity: 0;
@@ -32,14 +30,13 @@ body {
   }
 }
 .intro {
-  margin: 0;
   position: absolute;
   font-family: "Sono";
   color: brown;
   opacity: 0;
   animation-name: animation;
   animation-duration: 6s;
-  animation-timing-function: ease-in-out;   
+  animation-timing-function: ease-in-out;
 }
 .one {
   animation-delay: 0s;

@@ -1,0 +1,22 @@
+// html{
+//     font-size: ;
+// }
+#header{
+    border: solid;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#profile{
+    border: solid;
+    display: flex;
+    align-items: center;
+    gap:1rem;
+}
+#profile img{
+    height: 3rem;
+    // flex-shrink: 2;
+}
+#wel{
+    border: solid;
+}

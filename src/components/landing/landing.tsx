@@ -1,7 +1,9 @@
-import { useState, useEffect, useMemo } from "react";
-import Slidein from "./currentlyReading/currentlyReading";
 import "./landing.scss";
-function landing({ showSS }: { showSS: boolean }) {
+import Overview from "../landing/overview/overview";
+import { useContext } from "react";
+import { VisitedContext } from "../../App";
+function landing() {
+  const showSS=useContext(VisitedContext)
   if (showSS)
     return (
       <div id="intro-wrap">
@@ -10,7 +12,7 @@ function landing({ showSS }: { showSS: boolean }) {
         <h1 className="intro three">TEXT 3</h1>
       </div>
     );
-  else return <h1>txt</h1>;
+  else return <Overview/>;
 }
 
 export default landing;

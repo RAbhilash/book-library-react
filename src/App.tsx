@@ -1,9 +1,10 @@
 import "./App.scss";
 import Landing from "./components/landing/landing";
-import { useEffect, useState } from "react";
+import { useEffect, useState ,useContext,createContext} from "react";
+const VisitedContext=createContext(null);
 function App() {
   const [isFirstVisit, setVisited] = useState(() => {
-    if (localStorage.getItem("isFirstVisit") == null)
+    if (localStorage.getItem("isFirstVisit") === null)
       localStorage.setItem("isFirstVisit", JSON.stringify(true));
     return JSON.parse(
       localStorage.getItem("isFirstVisit") || JSON.stringify(true)
@@ -17,9 +18,11 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <Landing showSS={isFirstVisit} />
+      <VisitedContext.Provider value={isFirstVisit}>
+        <Landing />
+      </VisitedContext.Provider>
     </div>
   );
 }
 
-export default App;
+export {App,VisitedContext};
