@@ -1,7 +1,7 @@
 import "./App.scss";
 import Landing from "./components/landing/landing";
-import { useEffect, useState ,useContext,createContext} from "react";
-const VisitedContext=createContext(null);
+import { useEffect, useState} from "react";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   const [isFirstVisit, setVisited] = useState(() => {
     if (localStorage.getItem("isFirstVisit") === null)
@@ -17,12 +17,12 @@ function App() {
     }, 18000);
   }, []);
   return (
-    <div className="App">
-      <VisitedContext.Provider value={isFirstVisit}>
-        <Landing />
-      </VisitedContext.Provider>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Landing showSS={isFirstVisit}/>
+      </div>
+    </BrowserRouter>
   );
 }
 
-export {App,VisitedContext};
+export default App;

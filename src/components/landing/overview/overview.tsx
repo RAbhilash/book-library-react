@@ -1,13 +1,7 @@
 import Sidenav from "../../sidenav/sidenav";
 import Header from "../../header/header";
 import "./overview.scss";
-import { VisitedContext } from "../../../App";
-import { useContext } from "react";
 function overview() {
-const first = useContext(VisitedContext);
-  function onStatsHover() {
-    console.log(first);
-  }
   return (
     <div id="overview">
       <Header />
@@ -21,7 +15,7 @@ const first = useContext(VisitedContext);
           always do exactly what I want to do.
         </p>
       </div>
-      <div id="stats" onClick={onStatsHover}>
+      <div id="stats">
         <h2>
           Nothing yet... <br />
           Start building your library{"->"}
