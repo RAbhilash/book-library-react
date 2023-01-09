@@ -1,21 +1,18 @@
 import "../sidenav/sidenav.scss";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 function sidenav() {
-  const { id } = useParams();
+  const route=useLocation()
   return (
     <div id="sidenav">
-      {id === "" ? (
-        <></>
-      ) : (
-        <Link to="/">
+      {route.pathname !== "/" ? <Link to="/">
           <div id="sidenav-home">
             <img
               src="https://cdn-icons-png.flaticon.com/512/2932/2932143.png"
               alt=""
             />
           </div>
-        </Link>
-      )}
+        </Link>:
+        <></>}
       <Link to="/allbooks">
         <div id="sidenav-allbooks">
           <img
