@@ -1,11 +1,8 @@
-import Sidenav from "../../sidenav/sidenav";
-import Header from "../../header/header";
 import "./overview.scss";
+import { Link} from "react-router-dom";
 function overview() {
   return (
     <div id="overview">
-      <Header />
-      <Sidenav />
       <div id="quote">
         <p>
           You are the shuckiest shuck faced shuck in the world!” “I'm
@@ -16,10 +13,12 @@ function overview() {
         </p>
       </div>
       <div id="stats">
-        <h2>
-          Nothing yet... <br />
-          Start building your library{"->"}
-        </h2>
+        <Link to='/allbooks'>
+          <h2>
+            Nothing yet... <br />
+            Start building your library{"->"}
+          </h2>
+        </Link>
       </div>
       <div id="gif">
         <img

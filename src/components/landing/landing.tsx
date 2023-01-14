@@ -1,10 +1,12 @@
 import "./landing.scss";
 import Overview from "../landing/overview/overview";
-import Allbooks from "../sidenav/allbooks/allbooks";
-import Settings from "../sidenav/settings/settings";
-import About from "../sidenav/about/about";
+import Allbooks from "../pages/allbooks/allbooks";
+import Settings from "../pages/settings/settings";
+import About from "../pages/about/about";
+import Header from "../header/header";
+import Sidenav from "../sidenav/sidenav";
 import { Routes,Route } from "react-router-dom";
-function landing({showSS}:{showSS:boolean}) {
+function landing({showSS}:{showSS:React.MutableRefObject<boolean>}) {
   if (showSS)
     return (
       <div id="intro-wrap">
@@ -13,12 +15,18 @@ function landing({showSS}:{showSS:boolean}) {
         <h1 className="intro three">TEXT 3</h1>
       </div>
     );
-  else return <Routes>
-    <Route path="/" element={<Overview/>}/>
-    <Route path="/allbooks" element={<Allbooks/>}/>
-    <Route path="/settings" element={<Settings/>}/>
-    <Route path="/about" element={<About/>}/>
-  </Routes>;
+  else return(<>
+  <Header/>
+  <div id="horizontal-wrapper">
+    <Sidenav/>
+    <Routes>
+      <Route path="/" element={<Overview/>}/>
+      <Route path="/allbooks" element={<Allbooks/>}/>
+      <Route path="/settings" element={<Settings/>}/>
+      <Route path="/about" element={<About/>}/>
+    </Routes>
+  </div>
+  </>)
 }
 
 export default landing;

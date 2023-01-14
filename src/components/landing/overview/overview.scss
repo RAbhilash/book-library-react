@@ -1,48 +1,46 @@
-#overview {
+#overview{
   display: grid;
-  grid-template-columns: 0.2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  grid-template-rows: 0.1fr 1fr minmax(250px,1fr);
-  height: 100vh;
-}
-#header {
-  grid-column: 1/-1;
-  grid-row: 1/2;
+  grid-template-rows: 1fr minmax(250px, 1fr);
+  grid-template-areas: 
+  'quote quote'
+  'stats gif';
+  height: 87vh;
 }
 #sidenav {
-  grid-row: 2/-1;
+  flex: 0.1;
   border: solid magenta;
 }
 #quote {
+  grid-area: quote;
   color: #000000b9;
   display: flex;
   padding: 2rem;
   text-align: center;
   align-items: center;
-  grid-column: 2/-1;
-  grid-row: 2/3;
   border-radius: 20px;
-  background-image: linear-gradient(lightgrey,white);
+  background-image: linear-gradient(lightgrey, white);
 }
 #stats {
+  grid-area: stats;
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-row: 3/-1;
-  grid-column: 2/3;
-  color: rgb(199, 81, 81);
   background-color: rgb(239, 221, 147);
-  transition: transform .2s;
+  transition: transform 0.2s;
   border-radius: 20px;
   text-align: center;
 }
-#stats:hover{
+#stats:hover {
   transform: scale(0.99);
-  cursor: pointer;
+}
+#stats a {
+  text-decoration: none;
+  color: rgb(199, 81, 81);
 }
 #gif {
-  grid-row: 3/-1;
-  grid-column: 3/-1;
+  grid-area: gif;
   border: solid green;
 }
 #gif > img {

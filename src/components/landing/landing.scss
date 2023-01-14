@@ -3,6 +3,12 @@
   box-sizing: border-box;
 }
 $vheight: 100vh;
+#horizontal-wrapper{
+  display: flex;
+}
+#horizontal-wrapper div:nth-child(2){
+  flex: 2;
+}
 body {
   padding: 0;
   margin: 0;
