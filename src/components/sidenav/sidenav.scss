@@ -1,4 +1,4 @@
-#sidenav{
+.sidenav {
     border-radius: 20px;
     padding: 1rem;
     // width: 9%;
@@ -9,9 +9,9 @@
     height: 87vh;
     align-items: center;
 }
-#sidenav div{
+.sidenav div{
     height: 2rem;
 }
-#sidenav img{
+.sidenav img{
     height: 100%;
 }

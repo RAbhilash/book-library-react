@@ -1,0 +1,12 @@
+.toggle-theme{
+    padding: 1.5rem;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.dark{
+    background-color:darkslategray;
+    color: lightgray;
+}

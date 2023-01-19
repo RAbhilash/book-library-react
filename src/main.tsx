@@ -1,9 +1,12 @@
-import React from "react";
+import React, { createContext } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.scss";
+const themeContext = createContext('light')
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <App/>
+    <themeContext.Provider value='light'>
+      <App/>
+    </themeContext.Provider>
   </React.StrictMode>
 );
