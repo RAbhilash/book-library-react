@@ -1,10 +1,10 @@
 import "../sidenav/sidenav.scss";
 import { Link, useLocation } from "react-router-dom";
-import { themeContext } from "../../App";
-import { useContext } from "react";
+import  useTheme  from "../context/themeContext/ThemeProvider";
+
 function sidenav() {
   const route = useLocation()
-  const theme=useContext(themeContext)
+  const {theme}=useTheme()
   return (
     <div className={"sidenav " +theme}>
       {route.pathname !== "/" ? <Link to="/">

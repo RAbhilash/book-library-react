@@ -1,18 +1,29 @@
+$headerMargins: 2rem;
 .header {
-    border: solid;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  align-items: center;
+  &.light {
+    background-color: rgb(231, 231, 175);
+  }
 }
-#profile{
-    border: solid;
-    display: flex;
-    align-items: center;
-    gap:1rem;
+#profile {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
-#profile img{
-    height: 3rem;
+#profile img {
+  height: 3rem;
 }
-#wel{
-    border: solid;
+#bat {
+  flex: 1;
+  text-align: center;
+}
+#wel {
+  margin-left: $headerMargins;
+  flex: 3;
+  text-align: center;
 }

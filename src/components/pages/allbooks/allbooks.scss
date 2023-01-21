@@ -4,4 +4,14 @@
 #srch{
     display: flex;
     padding-left: 4px;
+    margin-bottom: 2%;
+}
+#booklist-wrapper{
+    border: solid;
+    display: grid;
+    padding: 2rem;
+    justify-items: center;
+    // grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    gap: 2rem;
 }

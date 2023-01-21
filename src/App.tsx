@@ -1,8 +1,12 @@
 import "./App.scss";
 import Landing from "./components/landing/landing";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-export const themeContext = createContext('')
+import BackgroundColorHandler from "./components/backgroundColorHandler";
+export const themeContext = createContext({
+  theme: '',
+  toggleTheme: () => { }
+})
 function App() {
   const [isFirstVisit, setVisited] = useState(() => {
     if (localStorage.getItem("isFirstVisit") === null)
@@ -27,12 +31,12 @@ function App() {
   const [theme, setTheme] = useState('light')
   return (
     <Router>
-      <div className={"App" + theme}>
-        <themeContext.Provider value={theme}>
+      <themeContext.Provider value={{ theme, toggleTheme }}>
+        <div className="App">
+          <BackgroundColorHandler />
           <Landing showSS={isFirstVisit} />
-          <button className={"toggle-theme " + theme} onClick={toggleTheme}><p>Toggle</p></button>
-        </themeContext.Provider>
-      </div>
+        </div>
+      </themeContext.Provider>
     </Router>
   );
 }

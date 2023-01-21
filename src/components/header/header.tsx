@@ -1,16 +1,16 @@
 import './header.scss'
 import profile from "/profile.webp";
-import { themeContext } from "../../App";
-import { useContext } from 'react';
+import useTheme from "../context/themeContext/ThemeProvider";
 function header() {
-  const theme = useContext(themeContext)
+  const { theme, toggleTheme } = useTheme()
   return (
-    <div className={'header '+theme}>
+    <div className={'header ' + theme}>
       <h1 id="wel">Welcome -name-</h1>
       <div id="profile">
         <img src={profile} alt="" />
         <p>username</p>
       </div>
+      <div id="bat"><button onClick={toggleTheme}>{theme}</button></div>
     </div>
   )
 }

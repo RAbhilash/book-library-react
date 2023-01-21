@@ -5,16 +5,19 @@
 $vheight: 100vh;
 #horizontal-wrapper{
   display: flex;
+  gap: 1%;
+  margin-top: 1%;
+  // padding: 1rem 0;
 }
-#horizontal-wrapper div:nth-child(2){
+#horizontal-wrapper>div:nth-child(2){
   flex: 2;
+  padding: 1rem;
 }
 body {
   padding: 0;
   margin: 0;
   // background-image: url('library.jpg');
   background-color: lightgoldenrodyellow;
-  height: $vheight;
 }
 #intro-wrap{
   position: relative;
