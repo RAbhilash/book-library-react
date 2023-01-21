@@ -1,15 +1,21 @@
 .bookcard {
-  border: solid;
   text-align: center;
   width: 10rem;
   border-radius: 20px;
   height: 13rem;
   overflow: hidden;
+  &.dark{
+    box-shadow: 3px 3px 1px rgb(159, 160, 191);
+  }
+  &.light{
+    box-shadow: 3px 3px 1px;
+  }
+  // -moz-box-shadow: 3px 3px 1px #ccc;
 }
-.bookcard .bookThumb{
+.bookcard .bookThumb {
   height: 100%;
   width: 100%;
-  &.dark{
-    filter: brightness(70%);
-  }
+  // &.dark {
+  //   filter: brightness(80%);
+  // }
 }

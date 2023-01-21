@@ -1,6 +1,6 @@
 import "./App.scss";
 import Landing from "./components/landing/landing";
-import { createContext, useEffect, useRef, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import BackgroundColorHandler from "./components/backgroundColorHandler";
 export const themeContext = createContext({

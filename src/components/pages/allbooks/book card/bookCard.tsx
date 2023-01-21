@@ -15,7 +15,7 @@ function bookCard({content}:{content:any}) {
   })
   const {theme}=useTheme()
   return (
-    <div className="bookcard" ref={bookCardRef}>
+    <div className={"bookcard "+theme} ref={bookCardRef}>
         <img src="https://s26162.pcdn.co/wp-content/uploads/2018/12/81A9dFqIEEL.jpg" alt="" className={'bookThumb '+theme}/>
     </div>
   )

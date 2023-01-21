@@ -1,45 +1,47 @@
 import "../sidenav/sidenav.scss";
-import { Link, useLocation } from "react-router-dom";
-import  useTheme  from "../context/themeContext/ThemeProvider";
-
+import { Link } from "react-router-dom";
+import useTheme from "../context/themeContext/ThemeProvider";
+import collage from '/collage.webp'
+import hut from '/hut.webp'
+import info from '/info.webp'
+import setting from '/setting.webp'
+import { motion } from "framer-motion";
 function sidenav() {
-  const route = useLocation()
-  const {theme}=useTheme()
+  const { theme } = useTheme()
+  const navoptions=[{
+    link:'/',
+    imgsrc:hut,
+    id:'home'
+  },
+  {
+    link:'/allbooks',
+    imgsrc:collage,
+    id:'allbooks'
+  },
+  {
+    link:'/settings',
+    imgsrc:setting,
+    id:'settings'
+  },
+  {
+    link:'/info',
+    imgsrc:info,
+    id:'info'
+  }
+]
   return (
-    <div className={"sidenav " +theme}>
-      {route.pathname !== "/" ? <Link to="/">
-        <div id="sidenav-home">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/2932/2932143.png"
-            alt=""
-          />
-        </div>
-      </Link> :
-        <></>}
-      <Link to="/allbooks">
-        <div id="sidenav-allbooks">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/8022/8022304.png"
-            alt=""
-          />
-        </div>
-      </Link>
-      <Link to="/settings">
-        <div id="sidenav-settings">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/70/70314.png"
-            alt=""
-          />
-        </div>
-      </Link>
-      <Link to="/info">
-        <div id="sidenav-info">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/471/471662.png"
-            alt=""
-          />
-        </div>
-      </Link>
+    <div className={"sidenav " + theme}>
+      {
+        navoptions.map(ele=>{
+          return <Link to={ele.link}>
+            <motion.div id={'sidenav-'+ele.id}
+            whileHover={{scale:1.1}}
+            transition={{duration:0.3}}>
+              <img src={ele.imgsrc} alt="" />
+            </motion.div>
+          </Link>
+        })
+      }
     </div>
   );
 }
