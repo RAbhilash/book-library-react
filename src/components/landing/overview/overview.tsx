@@ -2,9 +2,10 @@ import "./overview.scss";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import BookCard from "../../pages/allbooks/book card/bookCard";
-
+import useTheme  from "../../context/themeContext/ThemeProvider";
 function overview() {
   const arr = useRef(['first', 'second', 'third', 'third'])
+  const {theme}=useTheme()
   return (
     <div id="overview">
       <div id="quote">
@@ -16,7 +17,7 @@ function overview() {
           always do exactly what I want to do.
         </p>
       </div>
-      <div id="stats">
+      <div className={"stats "+theme}>
         {/* <Link to='/allbooks'>
           <h2>
             Nothing yet... <br />
@@ -26,19 +27,19 @@ function overview() {
         <div id="stats-flex-helper">
           <div id="stats-current">
             {
-              arr.current.map(ele => <BookCard content={ele} />)
+              arr.current.map((ele,key) => <BookCard content={ele} key={key}/>)
             }
           </div>
           <div id="stats-lower-row">
-            <div id="stats-total">
+            <div className={"stats-total "+theme}>
               <h2>Total books read</h2>
               <span>20</span>
             </div>
-            <div id="stats-pending">
+            <div className={"stats-pending "+theme}>
               <h2>Total books read</h2>
               <span>20</span>
             </div>
-            <div id="stats-reading">
+            <div className={"stats-reading "+theme}>
               <h2>Total books read</h2>
               <span>20</span>
             </div>

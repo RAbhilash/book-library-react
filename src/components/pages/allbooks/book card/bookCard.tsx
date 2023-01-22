@@ -1,16 +1,16 @@
 import { useEffect, useRef } from 'react'
 import './bookCard.scss'
 import useTheme from "../../../context/themeContext/ThemeProvider";
-function bookCard({content}:{content:any}) {
-  const bookCardRef = useRef(null)
-  function handleClick(e) {
+function bookCard(content:any) {
+  const bookCardRef = useRef<HTMLDivElement>(null)
+  function handleClick(e:MouseEvent) {
     console.log(e.target)
   }
   useEffect(() => {
-    bookCardRef.current.addEventListener('click',handleClick)
+    bookCardRef.current?.addEventListener('click',handleClick)
     const tempBookCardRef=bookCardRef.current
     return () => {
-      tempBookCardRef.removeEventListener('click',handleClick)
+      tempBookCardRef?.removeEventListener('click',handleClick)
     }
   })
   const {theme}=useTheme()

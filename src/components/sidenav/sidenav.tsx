@@ -8,35 +8,35 @@ import setting from '/setting.webp'
 import { motion } from "framer-motion";
 function sidenav() {
   const { theme } = useTheme()
-  const navoptions=[{
-    link:'/',
-    imgsrc:hut,
-    id:'home'
+  const navoptions = [{
+    link: '/',
+    imgsrc: hut,
+    id: 'home'
   },
   {
-    link:'/allbooks',
-    imgsrc:collage,
-    id:'allbooks'
+    link: '/allbooks',
+    imgsrc: collage,
+    id: 'allbooks'
   },
   {
-    link:'/settings',
-    imgsrc:setting,
-    id:'settings'
+    link: '/settings',
+    imgsrc: setting,
+    id: 'settings'
   },
   {
-    link:'/info',
-    imgsrc:info,
-    id:'info'
+    link: '/info',
+    imgsrc: info,
+    id: 'info'
   }
-]
+  ]
   return (
     <div className={"sidenav " + theme}>
       {
-        navoptions.map(ele=>{
-          return <Link to={ele.link}>
-            <motion.div id={'sidenav-'+ele.id}
-            whileHover={{scale:1.1}}
-            transition={{duration:0.3}}>
+        navoptions.map((ele,key) => {
+          return <Link to={ele.link} key={key}>
+            <motion.div id={'sidenav-' + ele.id}
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.2 }}>
               <img src={ele.imgsrc} alt="" />
             </motion.div>
           </Link>

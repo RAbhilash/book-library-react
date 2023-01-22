@@ -8,7 +8,7 @@ function allbooks() {
       <input type="text" id='srch' placeholder="Search"/>
       <div id="booklist-wrapper">
         {
-          arr.current.map(ele=><BookCard content={ele}/>)
+          arr.current.map((ele,key)=><BookCard content={ele} key={key}/>)
         }
       </div>
     </div>
