@@ -1,0 +1,29 @@
+$headerMargins: 2rem;
+.header {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: flex;
+  align-items: center;
+  &.light {
+    background-color: rgb(231, 231, 175);
+  }
+}
+#profile {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+#profile img {
+  height: 3rem;
+}
+#bat {
+  flex: 1;
+  text-align: center;
+}
+#wel {
+  margin-left: $headerMargins;
+  flex: 3;
+  text-align: center;
+}
